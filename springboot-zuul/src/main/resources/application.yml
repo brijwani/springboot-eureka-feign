@@ -1,18 +1,18 @@
-server.port: 8086
+server.port: 8085
 
 zuul:
   prefix: /api
   routes:
     springboot-eureka-client-2:
       path: /client2/**
-      serviceId: SPRINGBOOT-EUREKA-CLIENT-2
+      url: http://localhost:8084
       stripPrefix: true
     springboot-eureka-client-1:
       path: /client1/**
       #url: http://localhost:8082
       serviceId: SPRINGBOOT-EUREKA-CLIENT-1
       stripPrefix: true
-
+      
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
